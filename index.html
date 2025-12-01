@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion E-Commerce Page </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen">
+    
+    <nav class="sticky top-0 z-50 bg-white shadow-lg" style="border-bottom: 4px solid var(--color-primary);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-3xl font-extrabold tracking-widest text-[--color-primary] rounded-lg p-1 transition duration-300 hover:text-gray-900">
+                    Subtle-Stitch
+                </a>
+
+                <div class="hidden md:flex space-x-6 items-center">
+                    
+                    <a href="#products" class="text-gray-600 hover:text-[--color-primary] font-medium transition duration-200">Shop</a>
+                    <a href="#categories" class="text-gray-600 hover:text-[--color-primary] font-medium transition duration-200">Categories</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-[--color-primary] font-medium transition duration-200">About</a>
+                    
+                    <div class="relative flex items-center">
+                        <input type="text" placeholder="Search products..." 
+                               class="py-2 pl-4 pr-10 border border-gray-300 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-[--color-accent] text-gray-800"
+                               aria-label="Search products">
+                        <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</span>
+                    </div>
+
+                    <a href="#" class="text-2xl text-gray-600 hover:text-[--color-primary] transition duration-200" title="Cart">🛒</a>
+                    <a href="#" class="text-2xl text-gray-600 hover:text-[--color-primary] transition duration-200" title="Profile">👤</a>
+                    <a href="#" class="px-4 py-2 font-semibold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300 shadow-md">
+                        Login
+                    </a>
+                </div>
+
+                <input type="checkbox" id="menu-toggle" class="hidden">
+                <label for="menu-toggle" class="md:hidden text-3xl cursor-pointer text-[--color-primary] hover:text-gray-700">☰</label>
+
+                <div class="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg py-4 z-40"
+                     id="mobile-menu-content">
+                    <a href="#products" class="block px-4 py-2 text-gray-700 hover:bg-[--color-secondary] transition">Shop</a>
+                    <a href="#categories" class="block px-4 py-2 text-gray-700 hover:bg-[--color-secondary] transition">Categories</a>
+                    <a href="#testimonials" class="block px-4 py-2 text-gray-700 hover:bg-[--color-secondary] transition">About</a>
+                    <div class="px-4 py-2">
+                        <div class="relative mt-2">
+                            <input type="text" placeholder="Search products..." class="py-2 pl-4 pr-10 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[--color-primary] transition w-full">
+                            <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">🔍</span>
+                        </div>
+                        <a href="#" class="block w-full text-center px-4 py-2 mt-4 font-semibold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition shadow-md">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero bg-[url('images/winter.png')] min-h-[70vh] flex items-center justify-center relative shadow-xl">
+        <div class="absolute inset-0 bg-black opacity-40 z-10"></div>
+        <div class="relative z-20 text-center max-w-2xl p-6 rounded-xl bg-white/10 backdrop-blur-sm">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight drop-shadow-lg" >
+                The Winter Collection
+            </h1>
+            <p class="text-xl md:text-2xl text-white font-medium mb-8 drop-shadow-md" style="color: #a5ddff;">
+                Up to <span class="text-yellow-300 font-bold">50% off</span> on selected styles. Refresh your wardrobe now.
+            </p>
+            <a href="#products" class="inline-block px-10 py-4 font-bold text-[--color-primary] bg-white rounded-full text-lg shadow-2xl transition duration-300 hover:scale-105 hover:bg-[--color-secondary] active:scale-95">
+                Explore Styles
+            </a>
+        </div>
+    </section>
+
+    <div class="bg-[--color-primary] text-white text-center py-3 font-semibold text-lg flex items-center justify-center gap-4 shadow-xl">
+        <span>⚡ Flash Sale: Extra 20% OFF! Ends in</span>
+        <div class="flex gap-2 text-xl font-bold">
+            <span class="countdown-segment">03</span>:
+            <span class="countdown-segment">45</span>:
+            <span class="countdown-segment">22</span>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto p-4 md:p-8 mt-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
+            
+            <aside class="lg:sticky lg:top-20 h-fit p-6 bg-white rounded-2xl shadow-xl border border-[--color-secondary]">
+                <h3 class="text-2xl font-bold text-[--color-primary] mb-6 border-b pb-2">Filter Search</h3>
+                
+                <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">Category</h4>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-gray-700">
+                            <input type="checkbox" checked class="rounded text-[--color-primary] focus:ring-[--color-primary] mr-2">
+                            Women (100+)
+                        </label>
+                        <label class="flex items-center text-gray-700">
+                            <input type="checkbox" class="rounded text-[--color-primary] focus:ring-[--color-primary] mr-2">
+                            Men (85+)
+                        </label>
+                        <label class="flex items-center text-gray-700">
+                            <input type="checkbox" class="rounded text-[--color-primary] focus:ring-[--color-primary] mr-2">
+                            Accessories (45+)
+                        </label>
+                        <label class="flex items-center text-gray-700">
+                            <input type="checkbox" class="rounded text-[--color-primary] focus:ring-[--color-primary] mr-2">
+                            Footwear (30+)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-6 border-t pt-4">
+                    <h4 class="text-lg font-semibold mb-3">Price Range</h4>
+                    <input type="range" min="800" max="10000" value="150" class="w-full h-2 bg-[--color-secondary] rounded-lg appearance-none cursor-pointer" id="priceRange">
+                    <div class="flex justify-between text-sm mt-2 text-gray-600">
+                        <span> ₹800</span>
+                        <span> ₹10000+</span>
+                    </div>
+                </div>
+
+                <div class="mb-6 border-t pt-4">
+                    <h4 class="text-lg font-semibold mb-3">Color</h4>
+                    <div class="flex flex-wrap gap-2" id="colors">
+                        <div class="w-6 h-6 rounded-full border-2 border-[--color-primary] bg-black cursor-pointer " title="Black" ></div>
+                        <div class="w-6 h-6 rounded-full border border-gray-300 bg-white cursor-pointer" title="White"></div>
+                        <div class="w-6 h-6 rounded-full border border-gray-300 bg-red-500 cursor-pointer" title="Red"></div>
+                        <div class="w-6 h-6 rounded-full border border-gray-300 bg-blue-500 cursor-pointer" title="Blue"></div>
+                        <div class="w-6 h-6 rounded-full border border-gray-300 bg-green-500 cursor-pointer" title="Green"></div>
+                        <div class="w-6 h-6 rounded-full border border-gray-300 bg-yellow-500 cursor-pointer" title="Yellow"></div>
+                    </div>
+                </div>
+                
+                <button class="w-full py-3 mt-4 font-bold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300 shadow-md">
+                    Apply Filters
+                </button>
+            </aside>
+            
+            <main class="w-full">
+                
+                <section id="categories" class="mb-12">
+                    <h2 class="text-3xl font-extrabold text-[--color-primary] mb-6">Trending Categories</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <a href="#" class="category-card interactive-element bg-white p-6 rounded-2xl shadow-lg border border-[--color-secondary] text-center">
+                            <img class="w-20 h-20 object-cover rounded-full mx-auto mb-3 border-4 border-gray-100" 
+                                 src="images/men.jpg" alt="Men">
+                            <div class="text-xl font-semibold text-[--color-text-dark]">Men's Wear</div>
+                        </a>
+                        <a href="#" class="category-card interactive-element bg-white p-6 rounded-2xl shadow-lg border border-[--color-secondary] text-center">
+                            <img class="w-20 h-20 object-cover rounded-full mx-auto mb-3 border-4 border-gray-100" 
+                                 src="images/women.jpg" alt="Women">
+                            <div class="text-xl font-semibold text-[--color-text-dark]">Women's Fashion</div>
+                        </a>
+                        <a href="#" class="category-card interactive-element bg-white p-6 rounded-2xl shadow-lg border border-[--color-secondary] text-center">
+                            <img class="w-20 h-20 object-cover rounded-full mx-auto mb-3 border-4 border-gray-100" 
+                                 src="images/accesories.jpg" alt="Accessories">
+                            <div class="text-xl font-semibold text-[--color-text-dark]">Accessories</div>
+                        </a>
+                        <a href="#" class="category-card interactive-element bg-white p-6 rounded-2xl shadow-lg border border-[--color-secondary] text-center">
+                            <img class="w-20 h-20 object-cover rounded-full mx-auto mb-3 border-4 border-gray-100" 
+                                 src="images/footwear.jpg" alt="Footwear">
+                            <div class="text-xl font-semibold text-[--color-text-dark]">Footwear</div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="products" class="mb-12">
+                    <h2 class="text-3xl font-extrabold text-[--color-primary] mb-6">New Arrivals</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+                        
+                        <div class="product-card interactive-element bg-white p-4 rounded-2xl shadow-lg border border-[--color-secondary] text-center hover:shadow-2xl">
+                            <div class="product-image-container">
+                                <span class="sale-badge">SALE</span>
+                                <img class="w-full h-64 object-cover rounded-xl" src="images/denim.webp" alt="Classic Denim Jacket">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="text-xl font-semibold mb-1">Classic Denim Jacket</div>
+                            <div class="text-2xl font-extrabold text-red-500 mb-4"> ₹3449.99</div>
+                            <button class="w-full py-3 font-bold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                        
+                        <div class="product-card interactive-element bg-white p-4 rounded-2xl shadow-lg border border-[--color-secondary] text-center hover:shadow-2xl">
+                            <div class="product-image-container">
+                                <img class="w-full h-64 object-cover rounded-xl" src="images/sneaker.avif" alt="Men's White Sneakers">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="text-xl font-semibold mb-1">Men's White Sneakers</div>
+                            <div class="text-2xl font-extrabold text-red-500 mb-4"> ₹1799.99</div>
+                            <button class="w-full py-3 font-bold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                        
+                        <div class="product-card interactive-element bg-white p-4 rounded-2xl shadow-lg border border-[--color-secondary] text-center hover:shadow-2xl">
+                            <div class="product-image-container">
+                                 <span class="sale-badge">30% OFF</span>
+                                <img class="w-full h-64 object-cover rounded-xl" src="images/overcoat.jpg" alt="Women's Summer Dress">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="text-xl font-semibold mb-1">Women's overcoat</div>
+                            <div class="text-2xl font-extrabold text-red-500 mb-4"> ₹6999.99</div>
+                            <button class="w-full py-3 font-bold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                        
+                        <div class="product-card interactive-element bg-white p-4 rounded-2xl shadow-lg border border-[--color-secondary] text-center hover:shadow-2xl">
+                            <div class="product-image-container">
+                                <img class="w-full h-64 object-cover rounded-xl" src="images/handbag.webp" alt="Leather Handbag">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="text-xl font-semibold mb-1">Leather Handbag</div>
+                            <div class="text-2xl font-extrabold text-red-500 mb-4"> ₹5000.00</div>
+                            <button class="w-full py-3 font-bold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="product-card interactive-element bg-white p-4 rounded-2xl shadow-lg border border-[--color-secondary] text-center hover:shadow-2xl">
+                            <div class="product-image-container">
+                                <img class="w-full h-64 object-cover rounded-xl" src="images/trousers.webp" alt="Cropped Trousers">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="text-xl font-semibold mb-1">wide leg Trousers</div>
+                            <div class="text-2xl font-extrabold text-red-500 mb-4"> ₹2200.50</div>
+                            <button class="w-full py-3 font-bold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                        
+                        <div class="product-card interactive-element bg-white p-4 rounded-2xl shadow-lg border border-[--color-secondary] text-center hover:shadow-2xl">
+                            <div class="product-image-container">
+                                <span class="sale-badge">NEW</span>
+                                <img class="w-full h-64 object-cover rounded-xl" src="images/sunglasses.jpg" alt="Designer Sunglasses">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="text-xl font-semibold mb-1">Designer Sunglasses</div>
+                            <div class="text-2xl font-extrabold text-red-500 mb-4"> ₹1200.00</div>
+                            <button class="w-full py-3 font-bold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="product-card interactive-element bg-white p-4 rounded-2xl shadow-lg border border-[--color-secondary] text-center hover:shadow-2xl">
+                            <div class="product-image-container">
+                                <img class="w-full h-64 object-cover rounded-xl" src="images/jacket.jpg" alt="Basic Cotton T-Shirt">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="text-xl font-semibold mb-1">Men's Black Jacket</div>
+                            <div class="text-2xl font-extrabold text-red-500 mb-4"> ₹6799.99</div>
+                            <button class="w-full py-3 font-bold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                        <div class="product-card interactive-element bg-white p-4 rounded-2xl shadow-lg border border-[--color-secondary] text-center hover:shadow-2xl">
+                            <div class="product-image-container">
+                                <span class="sale-badge">SALE</span>
+                                <img class="w-full h-64 object-cover rounded-xl" src="images/boots.webp" alt="Suede Ankle Boots">
+                                <div class="product-overlay">
+                                    <button class="quick-view-btn">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="text-xl font-semibold mb-1">Suede Ankle Boots</div>
+                            <div class="text-2xl font-extrabold text-red-500 mb-4"> ₹4399.99</div>
+                            <button class="w-full py-3 font-bold text-white bg-[--color-primary] rounded-full hover:bg-gray-900 transition duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                        
+                        <a href="#" class="view-more-box interactive-element text-center" role="button" aria-label="View more products">
+                            <svg class="w-16 h-16 text-gray-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div class="text-2xl font-bold text-gray-700">View More</div>
+                            <p class="text-sm text-gray-500 mt-1">See hundreds of new styles</p>
+                        </a>
+
+                    </div>
+                </section>
+
+                <section id="testimonials" class="mb-12 bg-white p-8 rounded-2xl shadow-xl border border-[--color-secondary]">
+                    <h2 class="text-3xl font-extrabold text-[--color-primary] text-center mb-8">Loved by Our Customers</h2>
+                    <div class="flex flex-wrap justify-center gap-8">
+                        
+                        <div class="w-full sm:w-[300px] bg-[--color-secondary] p-6 rounded-xl text-center interactive-element hover:bg-white border border-gray-200">
+                            <img class="w-16 h-16 object-cover rounded-full mx-auto mb-4 border-4 border-[--color-primary]" src="images/customer1.jpeg" alt="Customer 1">
+                            <div class="text-lg font-bold mb-2 text-[--color-primary]">Aman</div>
+                            <p class="text-gray-700 italic">"Absolutely love the quality and fast shipping! The blue accents are stunning."</p>
+                        </div>
+
+                        <div class="w-full sm:w-[300px] bg-[--color-secondary] p-6 rounded-xl text-center interactive-element hover:bg-white border border-gray-200">
+                            <img class="w-16 h-16 object-cover rounded-full mx-auto mb-4 border-4 border-[--color-primary]" src="images/customer2.jpeg" alt="Customer 2">
+                            <div class="text-lg font-bold mb-2 text-[--color-primary]">Diksha </div>
+                            <p class="text-gray-700 italic">"Great selection and amazing deals. The design is modern and sophisticated."</p>
+                        </div>
+
+                        <div class="w-full sm:w-[300px] bg-[--color-secondary] p-6 rounded-xl text-center interactive-element hover:bg-white border border-gray-200">
+                            <img class="w-16 h-16 object-cover rounded-full mx-auto mb-4 border-4 border-[--color-primary]" src="images/customer3.jpeg" alt="Customer 3">
+                            <div class="text-lg font-bold mb-2 text-[--color-primary]">Aditya</div>
+                            <p class="text-gray-700 italic">"Customer service was super helpful. The entire experience was premium."</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="bg-[--color-primary] text-white p-10 rounded-2xl shadow-2xl text-center mb-12">
+                    <h2 class="text-3xl font-extrabold mb-3">Get Exclusive Access!</h2>
+                    <p class="text-xl font-light mb-6">Sign up for our newsletter to receive 10% off your first order.</p>
+                    
+                    <form class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <input type="email" placeholder="Enter your email address" required 
+                               class="w-full sm:w-80 px-5 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-white transition shadow-lg"
+                               aria-label="Email address for newsletter">
+                        <button type="submit" class="w-full sm:w-auto px-8 py-3 font-bold text-[--color-primary] bg-white rounded-full hover:bg-[--color-secondary] transition duration-300 shadow-xl">
+                            Subscribe
+                        </button>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white pt-12 pb-6 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto grid footer-grid gap-8">
+            
+            <div>
+                <div class="text-xl font-bold mb-4 text-[--color-secondary]">Account</div>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Login</a></li>
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Register</a></li>
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Order History</a></li>
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Wishlist</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <div class="text-xl font-bold mb-4 text-[--color-secondary]">Help Center</div>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Shipping Info</a></li>
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Returns & Exchanges</a></li>
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <div class="text-xl font-bold mb-4 text-[--color-secondary]">Policies</div>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-[--color-secondary] transition">Cookie Policy</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <div class="text-xl font-bold mb-4 text-[--color-secondary]">Connect</div>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="#" title="Instagram" class="hover:text-[--color-secondary] transition">📸</a>
+                    <a href="#" title="Facebook" class="hover:text-[--color-secondary] transition">📘</a>
+                    <a href="#" title="Twitter" class="hover:text-[--color-secondary] transition">🐦</a>
+                    <a href="#" title="Pinterest" class="hover:text-[--color-secondary] transition">📌</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+            &copy; 2025 Subtle-Stitch. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
